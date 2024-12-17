@@ -8,7 +8,7 @@ project = AwsCdkPythonApp(
     module_name="src",
     name="src",
     poetry=True,
-    python_exec="python3",
+    python_exec="python",
     version="0.1.0",
 )
 
