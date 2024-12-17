@@ -1,0 +1,16 @@
+fileChangeLogs:
+  - '.1024'
+  - pyproject.toml
+  - app.py
+  - src/__init__.py
+  - tests
+  - tests/__init__.py
+  - .projenrc.py
+  - cdk.json
+  - src/main.py
+  - README.md
+  - .projen
+  - poetry.toml
+  - tests/test_example.py
+  - .gitattributes
+  - src

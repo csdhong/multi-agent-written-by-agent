@@ -1,0 +1,30 @@
+{ pkgs ? import <nixpkgs> {} }:
+pkgs.mkShell {
+    shellHook = ''
+        alias ll="ls -l"
+        export PS1="\[\e[0m\]\w\[\e[0m\]#\[\e[0m\] "
+        export LANG=en_US.UTF-8
+        export PIP_TARGET=$HOME/.cache/pip/site-packages
+        export PYTHONPATH=$PIP_TARGET:$PYTHONPATH
+        export PATH=$PIP_TARGET/bin:$PATH
+    '';
+    packages = [
+        # env
+        pkgs.python312Full
+        pkgs.python312Packages.pip
+        pkgs.python312Packages.django
+        pkgs.python312Packages.numpy
+        pkgs.python312Packages.pandas
+        pkgs.python312Packages.scipy
+        # unitTest
+        pkgs.python312Packages.pytest
+        # lsp
+        pkgs.python312Packages.python-lsp-server
+        pkgs.glibcLocales
+        # GUI
+        pkgs.tigervnc
+        pkgs.fluxbox
+        pkgs.python312Packages.websockify
+        pkgs.pulseaudio
+    ];
+}
